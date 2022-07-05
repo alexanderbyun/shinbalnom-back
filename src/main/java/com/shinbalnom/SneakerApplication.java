@@ -18,6 +18,7 @@ public class SneakerApplication {
     }
 
     // Get sneaker
+    @CrossOrigin
     @GetMapping("/releases")
     public Iterable<Sneaker> index() {
         return sneakerRepository.findAll();
