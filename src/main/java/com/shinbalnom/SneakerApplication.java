@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
+@CrossOrigin
 @RestController
 public class SneakerApplication {
 
@@ -44,3 +45,4 @@ public class SneakerApplication {
         return sneakerRepository.findAll();
     }
 }
+
