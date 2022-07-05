@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
-@CrossOrigin
-@RequestMapping("/releases")
+@CrossOrigin(origins = "*")
 @RestController
+@RequestMapping("/releases")
 public class SneakerApplication {
 
     @Autowired
@@ -19,14 +19,12 @@ public class SneakerApplication {
     }
 
     // Get sneaker
-    @CrossOrigin
     @GetMapping("/releases")
     public Iterable<Sneaker> index() {
         return sneakerRepository.findAll();
     }
 
     // Add sneaker
-    @CrossOrigin
     @PostMapping("/releases")
     public Iterable<Sneaker> create (@RequestBody Sneaker sneakerData) {
         sneakerRepository.save(sneakerData);
@@ -34,7 +32,6 @@ public class SneakerApplication {
     }
 
     // Delete sneaker
-    @CrossOrigin
     @DeleteMapping("/releases/{id}")
     public Iterable<Sneaker> delete(@PathVariable int id) {
         sneakerRepository.deleteById(id);
@@ -42,7 +39,6 @@ public class SneakerApplication {
     }
 
     // Update sneaker
-    @CrossOrigin
     @PutMapping("/releases/{id}")
     public Iterable<Sneaker> update(@PathVariable int id, @RequestBody Sneaker sneakerData) {
         sneakerData.setId(id);
