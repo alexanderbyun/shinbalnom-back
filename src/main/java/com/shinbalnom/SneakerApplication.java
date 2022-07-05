@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 @CrossOrigin
+@RequestMapping("/releases")
 @RestController
 public class SneakerApplication {
 
