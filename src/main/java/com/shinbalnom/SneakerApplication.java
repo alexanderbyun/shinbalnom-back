@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
-@CrossOrigin(origins = "https://shinbalnom-frontend.herokuapp.com/")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class SneakerApplication {
 
